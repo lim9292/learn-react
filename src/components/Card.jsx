@@ -1,6 +1,7 @@
 import React from "react";
 
-const Card = ({ username = "사용자", discount = 0 }) => {
+const Card = ({ username = "사용자", discount = 0, onButtonClick }) => {
+  // logic
   const cardClass = "card-wrap";
   return (
     /*
@@ -14,7 +15,9 @@ const Card = ({ username = "사용자", discount = 0 }) => {
     <div className={cardClass}>
       <p> 반갑습니다. {username}님🎀🎀</p>
       {discount ? <p> 할인율 {discount}% </p> : ""}
-      <button type="button">바로가기</button>
+      <button type="button" onClick={() => onButtonClick(username)}>
+        바로가기
+      </button>
     </div>
   );
 };

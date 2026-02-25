@@ -1,19 +1,15 @@
-import Card from "./commponets/Card.jsx";
-import Counter from "./commponets/Counter.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Test from "./pages/Test";
+import Chat from "./pages/Chat";
 
 function App() {
   return (
-    <div className="App">
-      <Card username={"후츠릿"} discount={20} />
-      <Card username={"리리림"} discount={70} />
-      <Card username={"DY"} discount={90} />
-      <Card username={"멀캠"} discount={0} />
-
-      {/*
-      <Card />
-      <Counter />
-      */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Test />} />
+        <Route path="/Chat" element={<Chat />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
